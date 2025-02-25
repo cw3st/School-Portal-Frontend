@@ -1,0 +1,20 @@
+.notifications-dropdown {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    z-index: 1000;
+  }
+  
+  .notification-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .notification-item:last-child {
+    border-bottom: none;
+  }

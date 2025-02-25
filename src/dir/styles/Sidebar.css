@@ -1,0 +1,50 @@
+/* Sidebar.css */
+.sidebar {
+    width: 250px;
+    padding: 20px;
+    background-color: rgb(15, 40, 87);
+    color: #ffffff;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .menu-item:hover {
+    background-color: rgb(6, 180, 85, 0.7);
+  }
+
+  .dbc {
+    margin: 20px;
+    color: white;
+    margin-right: 80px;
+    padding-left: 0px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    display: flex;
+    width: 100px;
+  }
+  
+  .dbc:hover {
+    color: rgb(6, 180, 85);
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .dbimg {
+    height: 40px;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
