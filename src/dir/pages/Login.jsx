@@ -78,8 +78,6 @@ export default function Login() {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  axios.defaults.withCredentials = true;
-
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
@@ -88,7 +86,7 @@ export default function Login() {
       const result = await axios.post("https://school-portal-backend-95k8.onrender.com/login", {
         email,
         password,
-      });
+      }, {withCredentials: true});
   
       const token = result?.data?.token; // Ensure token exists
       console.log("Token received from login:", token);
