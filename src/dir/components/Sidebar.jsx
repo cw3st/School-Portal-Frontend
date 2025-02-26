@@ -67,7 +67,7 @@ const navigate = useNavigate();
   const logout = async (e) => {
     try {
       await axios
-        .get("http://localhost:5000/logout")
+        .get("https://school-portal-backend-95k8.onrender.com/logout")
         .then((result) => {
           console.log(result);
           navigate(`/login`);

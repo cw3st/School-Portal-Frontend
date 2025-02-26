@@ -83,18 +83,25 @@ export default function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setError("");
-
+  
     try {
-      const result = await axios.post("http://localhost:5000/login", {
+      const result = await axios.post("https://school-portal-backend-95k8.onrender.com/login", {
         email,
         password,
       });
-      const userData = result?.data.user;
-      if (userData) {
-        navigate(`/student/${userData._id}`);
+  
+      const token = result?.data?.token; // Ensure token exists
+      console.log("Token received from login:", token);
+  
+      if (token) {
+        localStorage.setItem("token", token); // Store token properly
+        navigate(`/student/${result?.data?.user?._id}`);
+      } else {
+        console.error("No token received");
+        setError("Login failed, no token provided.");
       }
     } catch (error) {
-      console.error(error);
+      console.error("Login error:", error);
       setError("Invalid email or password. Please try again.");
     }
   };

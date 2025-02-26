@@ -129,27 +129,28 @@ const studentDashboard = () => {
 
 
   const updateAll = async () => {
-    console.log("take");
+    const token = localStorage.getItem("token"); // Check if token is stored
+    console.log("Token being sent:", token);
+  
     try {
       await axios
-        .get("http://localhost:5000/me")
+        .get("https://school-portal-backend-95k8.onrender.com/me", {
+          withCredentials: true, // Include credentials if using cookies
+          headers: {
+            Authorization: `Bearer ${token}`, // Ensure token is in the correct format
+          },
+        })
         .then((result) => {
-          console.log(result);
+          console.log("Server Response:", result);
           setUser(result.data);
         })
         .catch((error) => {
-          console.log(error);
-          if (error.response.status == 400) {
-            console.log("error400");
-          } else {
-            console.log("error404");
-          }
+          console.error("Request Error:", error);
         });
     } catch (error) {
-      console.log(error);
+      console.error("Unexpected Error:", error);
     }
   };
-
   useEffect(() => {
     updateAll();
   }, []);

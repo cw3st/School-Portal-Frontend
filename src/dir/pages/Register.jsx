@@ -126,7 +126,7 @@ export default function Register() {
     }
 
     try {
-      const result = await axios.post("http://localhost:5000/register", {
+      const result = await axios.post("https://school-portal-backend-95k8.onrender.com/register", {
         name,
         email,
         regNum,

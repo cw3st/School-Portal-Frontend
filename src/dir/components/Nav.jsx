@@ -3,6 +3,7 @@ import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 import KUlogo from "../assets/JU logo.png";
 import "../styles/Home.css";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   const [showResponsiveNav, setShowResponsiveNav] = useState(false);
@@ -36,9 +37,9 @@ export default function Nav() {
             width="16"
             height="16"
             fill="currentColor"
-            class="bi bi-search"
+            className="bi bi-search"
             viewBox="0 0 16 16"
-            className="h2iih"
+            style={{marginLeft:"40px"}}
           >
             <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
           </svg>
@@ -55,7 +56,7 @@ export default function Nav() {
           <li className="navsel2">Courses</li>
           <li className="navsel2">Athletics</li>
           <li className="navsel2">University Life</li>
-          <li className="navsel2">Login</li>
+          <li className="navsel2"><Link to="/login">Login</Link></li>
           <li className="navsel2">Register</li>
         </ul>
       ) : (
